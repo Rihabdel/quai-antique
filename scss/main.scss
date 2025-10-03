@@ -6,7 +6,7 @@ html{
     min-height: 100vh;
 }
 main{
-    padding-bottom: 250px; /* Height of the footer */
+    padding-bottom: 100px; /* Height of the footer */
 }
 footer.footer {
     padding:15px;
@@ -44,4 +44,64 @@ p{
         align-items: center;
         justify-content: center;
     }
+}
+
+.img-card{
+    position:relative;
+
+    .img-title{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.img-card{
+    position: relative;
+
+    &:hover{
+        .img-title,
+        .card-text{
+            opacity: 1;
+        }
+        img{
+            filter: brightness(0.4);
+            transform: scale(1.05);
+            
+        }
+    }
+}
+    img{
+        border-radius: 10%;
+        transition: all 0.3s ease;
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+
+
+    }
+    .img-title{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+
+}
+.card-text{
+    position: absolute;
+    bottom: 10%;
+    left: 0%;
+    font-size: 1rem;
+    background-color: antiquewhite;
+    color: black;
+    border-radius: 5px;
+    padding: 10px 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
