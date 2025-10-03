@@ -1,6 +1,20 @@
 @import url("/node_modules/bootstrap-icons/font/bootstrap-icons.css");
 @import 'custom';
 
-*{
-    color: rgb(65, 225, 73);
+html{
+    position: relative;
+    min-height: 100vh;
+}
+main{
+    padding-bottom: 250px; /* Height of the footer */
+}
+footer.footer {
+    padding:15px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+p{
+    font-family:"hind madurai", sans-serif;
+    font-size: 12px;
 }

@@ -23960,6 +23960,23 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-* {
-  color: rgb(65, 225, 73);
+html {
+  position: relative;
+  min-height: 100vh;
+}
+
+main {
+  padding-bottom: 250px; /* Height of the footer */
+}
+
+footer.footer {
+  padding: 15px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+p {
+  font-family: "hind madurai", sans-serif;
+  font-size: 12px;
 }/*# sourceMappingURL=main.css.map */
