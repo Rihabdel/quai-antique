@@ -23993,7 +23993,8 @@ p {
   height: 100%;
   background-image: url(/images/plat.jpg);
   background-size: cover;
-  filter: brightness(0.4);
+  filter: brightness(0.3);
+  margin-bottom: 15px;
 }
 .hero-scene * {
   position: relative;
@@ -24060,4 +24061,8 @@ img {
   padding: 10px 10px;
   opacity: 0;
   transition: opacity 0.5s ease;
+}
+
+.form-label {
+  color: #906427;
 }/*# sourceMappingURL=main.css.map */
