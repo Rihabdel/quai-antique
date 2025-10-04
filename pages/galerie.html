@@ -3,49 +3,135 @@
         <h1>Galerie</h1>
     </div>
 </div>
+
 <div class="container ">
+    <div class="text-center">
+      <button type="button" class="btn btn-outline-primary my-4" data-bs-toggle="modal" data-bs-target="#editImgModal"><i class="bi bi-plus-circle"></i> Ajouter une image</button>
+</div>
     <div class="row row-cols-2 row-cols-lg-3 g-4">
         <div class="col p-3">
             <div class="img-card h-100">
                 <img src="/images/chef-cooking-restaurant_835197-3938.jpg">
                 <p class="img-title text-primary">Le Chef en action</p>
                     <p class="card-text">Le chef Arnaud Michant prépare un plat gastronomique avc passion et précision.</p>
-            </div>  
+            <div class="action-img-btn">          
+                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#editImgModal"><i class="bi bi-pencil-square"></i></button>
+                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#deleteImgModal"><i class="bi bi-trash3"></i></button>
+                </div>
+                </div>  
         </div>
         <div class="col p-3">
             <div class="img-card h-100">
                 <img src="/images/phalbm25919429_w660.jpg" >
                 <p class="img-title text-primary">Produits frais</p>
                     <p class="card-text">Une sélection de produits frais et de saison, soigneusement choisis pour nos plats.</p>
-            </div>  
+            <div class="action-img-btn">          
+                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#editImgModal"><i class="bi bi-pencil-square"></i></button>
+                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#deleteImgModal"><i class="bi bi-trash3"></i></button>
+                </div>
+                </div>  
         </div>
         <div class="col p-3">
             <div class="img-card h-100">
                 <img src="/images/467527d71a81.jpg" >
                 <p class="img-title text-primary">Réservation en ligne</p> 
                     <p class="card-text">Réservez votre table en ligne facilement et rapidement.</p>
-        </div>
+                <div class="action-img-btn">          
+                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#editImgModal"><i class="bi bi-pencil-square"></i></button>
+                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#deleteImgModal"><i class="bi bi-trash3"></i></button>
+                </div>
+                </div>
         </div>
         <div class="col p-3">
                 <div class="img-card h-100">
                     <img src="/images/David-Collins-restaurant-ideas-3.jpg" >
                 <p class="img-title text-primary">Intérieur du restaurant</p>
                     <p class="card-text">Découvrez l'ambiance chaleureuse et élégante de notre restaurant.</p>
-            </div>  
+                <div class="action-img-btn">          
+                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#editImgModal"><i class="bi bi-pencil-square"></i></button>
+                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#deleteImgModal"><i class="bi bi-trash3"></i></button>
+                </div>
+                </div>  
         </div>
         <div class="col p-3">
             <div class="img-card h-100">
                 <img src="/images/plat.jpg">
                 <p class="img-title text-primary">Plat gastronomique</p>
-                    <p class="card-text">Un exemple de nos plats gastronomiques, alliant saveurs et présentation.</p>          </div>
+                    <p class="card-text">Un exemple de nos plats gastronomiques, alliant saveurs et présentation.</p>       
+            <div class="action-img-btn">          
+                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#editImgModal"><i class="bi bi-pencil-square"></i></button>
+                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#deleteImgModal"><i class="bi bi-trash3"></i></button>
+                </div>
+                </div>
         </div>
         <div class="col p-3">
             <div class="img-card h-100">
                 <img src="/images/thecafebis.jpg" >
                 <p class="img-title ">Sélection de desserts</p>
                     <p class="card-text">Une variété de desserts délicieux pour terminer votre repas en beauté.</p>
-            </div>
+            <div class="action-img-btn">          
+                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#editImgModal"><i class="bi bi-pencil-square"></i></button>
+                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#deleteImgModal"><i class="bi bi-trash3"></i></button>
+                </div>
+                </div>
         </div>
     </div>
+    <div class="text-center"> 
+    <button type="button" class="btn btn-outline-primary my-4"><i class="bi bi-calendar"></i> Réserver</button>*
+</div>v
 </div>
 
+<!-- Modal modifier image de la galerie-->
+
+<div class="modal fade" id="editImgModal" tabindex="-1" aria-labelledby="editImgModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="editImgModalLabel">Modifier l'image</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="mb-3">
+              <label for="imageTitle" class="col-form-label">Titre de l'image:</label>
+              <input type="text" class="form-control" id="imageTitle">
+            </div>
+            <div class="mb-3">
+              <label for="imageDescription" class="col-form-label">Description:</label>
+              <textarea class="form-control" id="imageDescription"></textarea>
+            </div>
+            <div class="mb-3">
+
+                <label for="imageFile" class="col-form-label">Sélectionner une image:</label>
+                <input type="file" class="form-control" id="imageFile" accept="image/*">
+        
+            </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal supprimer image de la galerie-->
+
+<div class="modal fade" id="deleteImgModal" tabindex="-1" aria-labelledby="deleteImgModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="deleteImgModalLabel">Supprimer l'image</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Êtes-vous sûr de vouloir supprimer cette image ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-danger">Supprimer</button>
+      </div>
+    </div>
+  </div>
+</div>

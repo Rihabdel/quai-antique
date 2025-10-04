@@ -64,7 +64,8 @@ p{
 
     &:hover{
         .img-title,
-        .card-text{
+        .card-text,
+        .action-img-btn{
             opacity: 1;
         }
         img{
@@ -73,7 +74,18 @@ p{
             
         }
     }
-}
+    .action-img-btn{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
     img{
         border-radius: 10%;
         transition: all 0.3s ease;
@@ -93,7 +105,7 @@ p{
         color: white;
         opacity: 0;
         transition: opacity 0.3s ease;
-
+}
 }
 .card-text{
     position: absolute;
@@ -109,5 +121,5 @@ p{
 }
 
 .form-label{
-   color: $primary;
+    color: $primary;
 }
