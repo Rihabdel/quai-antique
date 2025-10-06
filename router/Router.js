@@ -26,6 +26,24 @@ const LoadContentPage = async () => {
   const path = window.location.pathname;
   // Récupération de l'URL actuelle
   const actualRoute = getRouteByUrl(path);
+  
+//Vérifier les droits d'accès à la page
+  const allRolesArray = actualRoute.access;
+
+  if(allRolesArray.length > 0){
+    if(allRolesArray.includes("disconnected")){
+      if(isConnected()){
+        window.location.replace("/");
+      }
+    }
+    else{
+      const roleUser = getRole();
+       if(!allRolesArray.includes(roleUser)){
+        window.location.replace("/");
+      }
+    }
+  }
+
   // Récupération du contenu HTML de la route
   const html = await fetch(actualRoute.pathHtml).then((data) => data.text());
   // Ajout du contenu HTML à l'élément avec l'ID "main-page"
@@ -44,6 +62,8 @@ const LoadContentPage = async () => {
 
   // Changement du titre de la page
   document.title = actualRoute.title + " - " + websiteName;
+  // Appel de la fonction pour afficher ou cacher les éléments en fonction des rôles
+showAndHideElementsForRoles()
 };
 
 // Fonction pour gérer les événements de routage (clic sur les liens)
