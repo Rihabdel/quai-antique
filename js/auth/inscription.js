@@ -6,12 +6,17 @@ const inputEmail=document.getElementById('EmailInput');
 const inputPassword=document.getElementById('PasswordInput');
 const inputConfirmPassword=document.getElementById('ConfirmPasswordInput');
 const btnvalidation=document.getElementById('btnSubmitInscription');
+const formInscription=document.getElementById('formulaireInscription');
 
 inputNom.addEventListener('keyup',validateForm);
 inputPrenom.addEventListener('keyup',validateForm);
 inputEmail.addEventListener('keyup',validateForm);
 inputPassword.addEventListener('keyup',validateForm);
-inputConfirmPassword.addEventListener('keyup',validateForm);   
+inputConfirmPassword.addEventListener('keyup',validateForm);
+btnvalidation.addEventListener("click", (event) => InscrireUtilisateur(event));
+
+
+
 
 
 //Function permettant de valider tout le formulaire 
@@ -76,4 +81,41 @@ function validateRequired(input){
         return false;
 
     }
+}
+
+function InscrireUtilisateur(event){
+    event.preventDefault(); // Empêche le comportement par défaut du bouton (soumission du formulaire)
+// Crée un nouvel objet FormData à partir du formulaire contenu dans la variable "formInscription"
+let formData = new FormData(formInscription);
+let myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+let raw = JSON.stringify({
+    "firstName": formData.get("prenom"),
+    "lastName": formData.get("nom"),
+    "email": formData.get("email"),
+    "password": formData.get("password")
+});
+
+let requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+};
+
+fetch("https://127.0.0.1:8000/api/registration", requestOptions)
+  .then(response =>{
+        if(response.ok){
+            return response.json();
+        }
+        else{
+            alert("Erreur lors de l'inscription");
+        }
+    })
+     .then(result => {
+        alert("Bravo "+formData.get("prenom")+", vous êtes maintenant inscrit, vous pouvez vous connecter.");
+        document.location.href="/connexion";
+    })
+    .catch(error => console.log('error', error));
 }
